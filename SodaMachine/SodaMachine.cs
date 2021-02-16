@@ -11,6 +11,8 @@ namespace SodaMachine
         //Member Variables (Has A)
         private List<Coin> _register;
         private List<Can> _inventory;
+        
+
 
         //Constructor (Spawner)
         public SodaMachine()
@@ -51,11 +53,11 @@ namespace SodaMachine
         // 1/3 OF PROJECT! PANIC IF NOT DONE!
         private void Transaction(Customer customer)
         {
-            UserInterface.SodaSelection
-            string customerSelection = "";
+            
+            string customerSelection = UserInterface.SodaSelection(_inventory);
             Can canChoice = GetSodaFromInventory(customerSelection);
-            customer.GetCoinFromWallet(canChoice);
-            customer.
+            List<Coin> payment = customer.GatherCoinsFromWallet(canChoice);
+            CalculateTransaction(payment, canChoice, customer);
         }
         //Gets a soda from the inventory based on the name of the soda.
         private Can GetSodaFromInventory(string nameOfSoda)
@@ -72,7 +74,14 @@ namespace SodaMachine
         //If the payment does not meet the cost of the soda: despense payment back to the customer.
         private void CalculateTransaction(List<Coin> payment, Can chosenSoda, Customer customer)
         {
-           
+            if (chosenSoda.price > chosenSoda && payment < _register) 
+            {
+                _inventory[chosenSoda]--;
+                _register[chosenSoda]--;
+            }
+            
+
+
         }
         //Takes in the value of the amount of change needed.
         //Attempts to gather all the required coins from the sodamachine's register to make change.
@@ -102,7 +111,7 @@ namespace SodaMachine
         //Takes in a list of coins to returnt he total value of the coins as a double.
         private double TotalCoinValue(List<Coin> payment)
         {
-           
+            List<Coin> = Convert.ToDouble(payment);
         }
         //Puts a list of coins into the soda machines register.
         private void DepositCoinsIntoRegister(List<Coin> coins)
