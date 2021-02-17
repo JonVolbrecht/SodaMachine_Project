@@ -56,7 +56,25 @@ namespace SodaMachine
         //A method to fill the sodamachines inventory with soda can objects.
         public void FillInventory()
         {
-            
+            Cola cola = new Cola();
+            RootBeer rootBeer = new RootBeer();
+            OrangeSoda orange = new OrangeSoda();
+
+            for (int i = 0; i < 100; i++)
+            {
+                _inventory.Add(cola);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                _inventory.Add(rootBeer);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                _inventory.Add(orange);
+            }
+
         }
         //Method to be called to start a transaction.
         //Takes in a customer which can be passed freely to which ever method needs it.
@@ -97,10 +115,9 @@ namespace SodaMachine
         //If the payment does not meet the cost of the soda: despense payment back to the customer.
         private void CalculateTransaction(List<Coin> payment, Can chosenSoda, Customer customer)
         {
-            if (chosenSoda.price > chosenSoda && payment < _register) 
+            if (true)
             {
-                _inventory[chosenSoda]--;
-                _register[chosenSoda]--;
+
             }
             
 
@@ -112,7 +129,15 @@ namespace SodaMachine
         //If the change cannot be made, return null.
         private List<Coin> GatherChange(double changeValue)
         {
-            
+            while (changeValue != 0)
+            {
+                while (changeValue > .25)
+                {
+
+                }
+
+                
+            }
         }
         //Reusable method to check if the register has a coin of that name.
         //If it does have one, return true.  Else, false.
@@ -134,8 +159,8 @@ namespace SodaMachine
         //Takes in a list of coins to returnt he total value of the coins as a double.
         private double TotalCoinValue(List<Coin> payment)
         {
-            
-            while (payment < chosenSoda.value)
+
+            while (true)
             {
 
             }
