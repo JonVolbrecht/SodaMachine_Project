@@ -129,15 +129,15 @@ namespace SodaMachine
         //If the change cannot be made, return null.
         private List<Coin> GatherChange(double changeValue)
         {
-            while (changeValue != 0)
+            
+            
+            while (changeValue > .25)
             {
-                while (changeValue > .25)
-                {
 
-                }
+            }
 
                 
-            }
+            
         }
         //Reusable method to check if the register has a coin of that name.
         //If it does have one, return true.  Else, false.
